@@ -14,6 +14,9 @@ public class createAccount {
 				+ "%3Fhl%3Den-US&ec=GAlA8wE&hl=en&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-"
 				+ "1241331482%3A1722311049648081&ddm=0";
 		String nextButton="//span[text()='Next']";
+		String userName ="//input[@name='Username']";
+		String passWord="/input[@name='Passwd']";
+		String conifirmPassword="//input[@name='PasswdAgain']";
 		
 		WebDriver  driver= new ChromeDriver();
 		driver.get(Url);
@@ -32,10 +35,10 @@ public class createAccount {
 		Select selectGender= new Select(Gender);
 		selectGender.selectByVisibleText("Male");
 		driver.findElement(By.xpath(nextButton)).click();
-		driver.findElement(By.xpath("//input[@name='Username']")).sendKeys("sharpmind9703");
+		driver.findElement(By.xpath(userName)).sendKeys("sharpmind9703");
 		driver.findElement(By.xpath(nextButton)).click();
-		driver.findElement(By.xpath("/input[@name='Passwd']")).sendKeys("SharpMind@2268");
-		driver.findElement(By.xpath("//input[@name='PasswdAgain']")).sendKeys("SharpMind@2268");
+		driver.findElement(By.xpath(passWord)).sendKeys("SharpMind@2268");
+		driver.findElement(By.xpath(conifirmPassword)).sendKeys("SharpMind@2268");
 		driver.findElement(By.xpath(nextButton)).click();
 		driver.findElement(By.xpath("//span[text()='Phone number']")).sendKeys("9092654591");
 		driver.findElement(By.xpath(nextButton)).click();
